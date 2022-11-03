@@ -14,7 +14,6 @@ export default {
 </script>
 
 <style>
-@import url(./assets/css/reset.css);
 *,
 *::after,
 *::before {
