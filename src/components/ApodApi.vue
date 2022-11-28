@@ -51,7 +51,11 @@ export default {
       <div class="apod__card">
         <div class="apod__card--body">
           <div v-show="isImage" class="apod__card--img">
-            <img :src="apod.url" class="apod__card--img--obj" alt="Astronomy Pict of the Day" />
+            <img
+              :src="apod.url"
+              class="apod__card--img--obj"
+              alt="Astronomy Pict of the Day"
+            />
             <h3 class="apod__card--title">
               {{ apod.title }}
               <div class="apod__card--title-border"></div>
@@ -60,7 +64,11 @@ export default {
             <p class="apod__card--desc">{{ apod.explanation }}</p>
           </div>
           <div class="apod__card--video" v-show="!isImage">
-            <iframe v-show="!isImage" class="apod__card--video-obj" :src="apod.url"></iframe>
+            <iframe
+              v-show="!isImage"
+              class="apod__card--video-obj"
+              :src="apod.url"
+            ></iframe>
             <h3 class="apod__card--title">
               {{ apod.title }}
               <div class="apod__card--title-border"></div>
@@ -76,7 +84,13 @@ export default {
     </a>
     <div class="datepicker__wrapper">
       <label class="datepicker__label" for="apod-date">Choose a date</label>
-      <input class="datepicker" type="date" name="pic-of-day-date" id="apod-date" @change="datePicker" />
+      <input
+        class="datepicker"
+        type="date"
+        name="pic-of-day-date"
+        id="apod-date"
+        @change="datePicker"
+      />
     </div>
   </section>
 </template>
@@ -92,8 +106,9 @@ export default {
 }
 
 [type="date"] {
-  background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 95% 55%
-    no-repeat;
+  background: #fff
+    url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+    95% 55% no-repeat;
 }
 
 [type="date"]::-webkit-inner-spin-button {
