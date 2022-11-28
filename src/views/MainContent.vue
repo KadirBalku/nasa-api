@@ -4,10 +4,10 @@
 </template>
 
 <script>
-import NavHeader from "../components/NavHeader.vue";
+import NavHeader from '../components/NavHeader.vue';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     NavHeader,
   },

@@ -7,7 +7,6 @@ export default {
   data() {
     return {
       navTabs: [],
-      activeTab: "apodTab",
     };
   },
   methods: {
@@ -36,7 +35,7 @@ export default {
     </nav>
   </header>
   <main>
-    <ApodApi v-if="activeTab === 'apodTab'" />
+    <ApodApi />
   </main>
 </template>
 
