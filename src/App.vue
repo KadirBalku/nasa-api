@@ -1,34 +1,32 @@
 <template>
-  <NavHeader />
+  <nav>
+    <router-link to="/">Home</router-link>
+    |
+    <router-link to="/about">About</router-link>
+    <router-link to="/images">Images</router-link>
+  </nav>
+  <router-view />
 </template>
 
-<script>
-import NavHeader from "./components/NavHeader.vue";
-
-export default {
-  name: "App",
-  components: {
-    NavHeader,
-  },
-};
-</script>
-
 <style>
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 
-html {
-  font: 16px Verdana, sans-serif;
+nav {
+  padding: 30px;
 }
 
-html,
-#app,
-body {
-  height: 100%;
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

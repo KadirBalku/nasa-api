@@ -3,8 +3,7 @@ export default {
   data() {
     return {
       apod: "",
-      newDate: "",
-      apiKey: "api_key=unFgZvhXOm4jh0uDO1JFCISAQibB0gSYJkPUm6T3", //api key
+      apiKey: "api_key=" + process.env.VUE_APP_API_KEY, //api key
       url: "https://api.nasa.gov/planetary/apod?",
     };
   },
@@ -25,16 +24,12 @@ export default {
     hasCopyright() {
       return this.apod.copyright !== undefined;
     },
-    dateOutput() {
-      return this.newDate.split("-").reverse().join("/");
-    },
   },
   methods: {
     async fetchData(date) {
       this.apod = "";
       const res = await fetch(this.url + this.apiKey + date);
       this.apod = await res.json();
-      this.newDate = this.apod.date;
     },
 
     datePicker(event) {
@@ -51,7 +46,7 @@ export default {
 <template>
   <section class="component__container" id="apod">
     <h2>Astronomy Picture of the Day</h2>
-    <p>{{ dateOutput }}</p>
+    <p>{{ apod.date }}</p>
     <a :href="apod.hdurl" target="_blank">
       <div class="apod__card">
         <div class="apod__card--body">
