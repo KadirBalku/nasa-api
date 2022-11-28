@@ -51,11 +51,7 @@ export default {
       <div class="apod__card">
         <div class="apod__card--body">
           <div v-show="isImage" class="apod__card--img">
-            <img
-              :src="apod.url"
-              class="apod__card--img--obj"
-              alt="Astronomy Picture of the Day"
-            />
+            <img :src="apod.url" class="apod__card--img--obj" alt="Astronomy Pict of the Day" />
             <h3 class="apod__card--title">
               {{ apod.title }}
               <div class="apod__card--title-border"></div>
@@ -64,11 +60,7 @@ export default {
             <p class="apod__card--desc">{{ apod.explanation }}</p>
           </div>
           <div class="apod__card--video" v-show="!isImage">
-            <iframe
-              v-show="!isImage"
-              class="apod__card--video-obj"
-              :src="apod.url"
-            ></iframe>
+            <iframe v-show="!isImage" class="apod__card--video-obj" :src="apod.url"></iframe>
             <h3 class="apod__card--title">
               {{ apod.title }}
               <div class="apod__card--title-border"></div>
@@ -84,13 +76,7 @@ export default {
     </a>
     <div class="datepicker__wrapper">
       <label class="datepicker__label" for="apod-date">Choose a date</label>
-      <input
-        class="datepicker"
-        type="date"
-        name="pic-of-day-date"
-        id="apod-date"
-        @change="datePicker($event)"
-      />
+      <input class="datepicker" type="date" name="pic-of-day-date" id="apod-date" @change="datePicker" />
     </div>
   </section>
 </template>
@@ -106,9 +92,8 @@ export default {
 }
 
 [type="date"] {
-  background: #fff
-    url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
-    95% 55% no-repeat;
+  background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 95% 55%
+    no-repeat;
 }
 
 [type="date"]::-webkit-inner-spin-button {
@@ -159,9 +144,7 @@ export default {
   padding: 0;
   margin: 0;
   border-radius: 10px;
-  box-shadow: -6px 36px 96px -4px rgba(0, 0, 0, 1);
-  -webkit-box-shadow: -6px 36px 96px -4px rgba(0, 0, 0, 1);
-  -moz-box-shadow: -6px 36px 96px -4px rgba(0, 0, 0, 1);
+  box-shadow: 0px 2px 12px black;
   overflow: hidden;
 }
 
@@ -176,6 +159,7 @@ export default {
   transition: all 0.5s ease-in;
   filter: drop-shadow(3px 3px 2px black);
 }
+
 .apod__card--title-border {
   background: rgb(255, 255, 255);
   background: -moz-linear-gradient(
@@ -201,10 +185,8 @@ export default {
   height: 3px;
   width: 100%;
 }
+
 .apod__card--body {
-  display: flex;
-  width: 100%;
-  height: min-content;
 }
 .apod__card--img {
   position: relative;
